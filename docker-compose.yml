@@ -6,7 +6,10 @@ services:
       - 9090:9090
     restart: always
     volumes:
+     - ./monitor-app/prometheus.yml:/etc/prometheus/prometheus.yml
      - ./monitor-app/data:/etc/prometheus/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
   visualize-app:
     image: grafana/grafana-enterprise
     ports:
