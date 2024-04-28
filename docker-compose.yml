@@ -5,3 +5,14 @@ services:
     ports:
       - 9090:9090
     restart: always
+    volumes:
+     - ./monitor-app/data:/etc/prometheus/data
+  visualize-app:
+    image: grafana/grafana-enterprise
+    ports:
+      - 3000:3000
+    restart: always
+    user: "$UID:$UID"
+    volumes:
+      - ./visualize-app/data:/var/lib/grafana
+
