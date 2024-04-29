@@ -4,7 +4,7 @@
 
 ```bash
 mkdir -p ./visualize-app/data
-mkdir ./monitor-app/data
+mkdir -p ./monitor-app/data
 echo "UID=$UID" > .env
 ```
 
